@@ -24,8 +24,7 @@ class Card:
         self.value = value
 
     def __repr__(self):
-        res = f"({self.card_type.value}"
+        res = f"{self.card_type.value}"
         if self.color: res += f"::{self.color.value}"
         if self.value: res += f"::{self.value}"
-        res += ")"
-        return res
+        return "(" + res + ")"
