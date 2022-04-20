@@ -9,7 +9,7 @@ class Deck:
     def _init(self):
         for color in Color:
             self._add_cards(CardType.REGULAR, color, range(10), True)
-            self._add_cards(CardType.REGULAR, color, range(1, 9), True)
+            self._add_cards(CardType.REGULAR, color, range(1, 10), True)
 
             self._add_cards(CardType.SKIP, color, range(2))
             self._add_cards(CardType.REVERSE, color, range(2))

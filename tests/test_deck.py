@@ -9,16 +9,17 @@ def test_number_of_total_cards():
 
 
 def test_number_of_regular_cards():
-    counts = Counter([c for c in Color])
+    card_count_by_color = Counter([c for c in Color])
 
     for card in Deck().get_cards():
         if card.card_type == CardType.REGULAR:
-            counts[card.color] += 1
+            card_count_by_color[card.color] += 1
 
     total_count = 0
-    for count in counts.items():
-        assert count[1] == 19
-        total_count += count[1]
+    for count in card_count_by_color.items():
+        color_count = count[1] - 1  # Need to subtract 1 because Counter initializes at 1 instead of 0
+        assert color_count == 19
+        total_count += color_count
 
     assert total_count == 76
 
